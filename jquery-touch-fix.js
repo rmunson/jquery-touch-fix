@@ -1,3 +1,8 @@
+/**
+ * Very basic extension to jQuery events to ensure touches are monitored.  Simply for support right now
+ * but possibly an avenue for further extension at one point. 
+ * @author rmunson
+ */
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
@@ -11,11 +16,6 @@
     	factory(jQuery);
     }
 }(this,function(jQuery){
-	/**
-	 * Very basic extension to jQuery events to ensure touches are monitored.  Simply for support right now
-	 * but possibly an avenue for further extension at one point. 
-	 * @author rmunson
-	 */
     if(jQuery && jQuery.event){
     	jQuery.event.touchHooks=$.extend(true,{},jQuery.event.mouseHooks,{props:['touches']});
 
