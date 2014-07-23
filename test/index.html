@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+	<title>jquery.simple-touch - Unit tests</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link rel="stylesheet" type="text/css" href="../bower_components/mocha/mocha.css">
+	<style>
+		#mocha .test code, #mocha .test pre {
+			white-space:pre-line;
+		}
+	</style>
+	<script type="text/javascript" src="../bower_components/requirejs/require.js"></script>
+	<script type="text/javascript" src="../bower_components/mocha/mocha.js"></script>
+	<script type="text/javascript" src="../bower_components/jquery/dist/jquery.js"></script>
+
+</head>
+<body>
+	<div id="mocha"></div>
+	<script type="text/javascript">
+		mocha.setup({
+			ui : 'bdd',
+			reporter : ['html'],
+			globals  : ['results']
+		});
+		mocha.checkLeaks();
+		require.config({
+			baseUrl : '../bower_components/'
+		});
+		require([
+			'chai/chai', 
+			'../jquery.simple-touch'  
+		],function( chai, jquerySimpleTouch ){
+			var expect=chai.expect;
+
+			describe("jquery.simple-touch",function(){
+				it("add hooks to jQuery.event",function(){
+					expect(jQuery.event.fixHooks).to.contain.keys(
+						'touchstart',
+						'touchend',
+						'touchmove',
+						'touchcancel'
+					);
+				});
+				if('ontouchstart' in window){
+					it("touch events should surface a touches property on the event",function(done){
+						var evt=document.createEvent('TouchEvent');
+						evt.initEvent('touchstart');
+						jQuery(window).on('touchstart',function(e){
+							expect(e.touches).to.not.equal(undefined);
+							done();
+						});
+
+						window.dispatchEvent(evt);
+					});
+				}
+			});
+			mocha.run();
+		});			
+	</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{
+  "name": "jquery.simple-touch",
+  "main": "jquery.simple-touch.js",
+  "version": "1.0.0",
+  "description": "Ensure event.touches are monitored by jQuery touch listeners.",
+  "moduleType": [
+    "amd",
+    "globals"
+  ],
+  "keywords": [
+    "jquery.simple-touch",
+    "jquery",
+    "touch",
+    "events",
+    "touches"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "requirejs": "~2.1.14",
+    "mocha": "~1.20.1",
+    "chai": "~1.9.1",
+    "jquery": ">=1.7.1"
+  }
+}
