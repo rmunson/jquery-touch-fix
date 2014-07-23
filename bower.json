@@ -1,6 +1,6 @@
 {
-  "name": "jquery.simple-touch",
-  "main": "jquery.simple-touch.js",
+  "name": "jquery-touch-fix",
+  "main": "jquery-touch-fix.js",
   "version": "1.0.0",
   "description": "Ensure event.touches are monitored by jQuery touch listeners.",
   "moduleType": [
@@ -8,9 +8,10 @@
     "globals"
   ],
   "keywords": [
-    "jquery.simple-touch",
+    "jquery-touch-fix",
     "jquery",
     "touch",
+    "event",
     "events",
     "touches"
   ],
@@ -22,10 +23,12 @@
     "test",
     "tests"
   ],
+  "dependencies" : {
+    "jquery": ">=1.7.1"
+  }
   "devDependencies": {
     "requirejs": "~2.1.14",
     "mocha": "~1.20.1",
     "chai": "~1.9.1",
-    "jquery": ">=1.7.1"
   }
 }

@@ -30,8 +30,8 @@
 		});
 		require([
 			'chai/chai', 
-			'../jquery.simple-touch'  
-		],function( chai, jquerySimpleTouch ){
+			'../jquery-touch-fix'  
+		],function( chai, jqueryTouchFix ){
 			var expect=chai.expect;
 
 			describe("jquery.simple-touch",function(){
@@ -42,6 +42,9 @@
 						'touchmove',
 						'touchcancel'
 					);
+				});
+				it("should return an instance of jQuery",function(){
+					expect(jqueryTouchFix).to.equal(jQuery);
 				});
 				if('ontouchstart' in window){
 					it("touch events should surface a touches property on the event",function(done){

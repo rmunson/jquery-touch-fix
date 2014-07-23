@@ -23,4 +23,5 @@
 			jQuery.event.fixHooks[name] = jQuery.event.touchHooks;
 	    });
     }
+    return jQuery;
 }));
