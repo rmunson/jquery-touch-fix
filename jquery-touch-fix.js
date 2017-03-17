@@ -16,7 +16,7 @@
     	factory(jQuery);
     }
 }(this,function(jQuery){
-    if(jQuery && jQuery.event){
+    if(jQuery && jQuery.event && jQuery.event.mouseHooks){
     	jQuery.event.touchHooks=jQuery.extend(true,{},jQuery.event.mouseHooks,{props:['touches']});
 
     	jQuery.each('touchstart touchend touchmove touchcancel pinch'.split(' '),function(i,name) {
