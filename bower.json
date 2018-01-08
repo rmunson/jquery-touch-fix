@@ -1,7 +1,6 @@
 {
   "name": "jquery-touch-fix",
   "main": "jquery-touch-fix.js",
-  "version": "1.0.1",
   "description": "Ensure event.touches are monitored by jQuery touch listeners.",
   "moduleType": [
     "amd",
